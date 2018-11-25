@@ -104,3 +104,4 @@ void WritePrivateProfileString(LPCSTR pSection, LPCSTR pValue);
 void LoadWindowPosition(CRect &pRect);
 void SaveWindowPosition(CRect &pRect);
 DWORD GetServicePack();
+void EnsureAppDataDirectoryExists();

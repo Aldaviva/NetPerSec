@@ -143,10 +143,10 @@ void FormatBytes(double val, CString &outStr, BOOL perSecond) {
 		UINT GIGA = 1 << 30;
 		UINT MEGA = 1 << 20;
 		UINT KILO = 1 << 10;
-		if      (val >= GIGA) outStr.Format("%.3f GBytes", val / GIGA);
-		else if (val >= MEGA) outStr.Format("%.2f MBytes", val / MEGA);
-		else if (val >= KILO) outStr.Format("%.2f KBytes", val / KILO);
-		else                  outStr.Format("%d Bytes", (int)val);
+		if      (val >= GIGA) outStr.Format("%.3f GB", val / GIGA);
+		else if (val >= MEGA) outStr.Format("%.2f MB", val / MEGA);
+		else if (val >= KILO) outStr.Format("%.2f KB", val / KILO);
+		else                  outStr.Format("%d B", (int)val);
 		
 	} else {  // Bits
 		// Decimal prefixes
@@ -154,10 +154,10 @@ void FormatBytes(double val, CString &outStr, BOOL perSecond) {
 		UINT MEGA =    1000000;
 		UINT KILO =       1000;
 		val *= 8;
-		if      (val >= GIGA) outStr.Format("%.3f gbits", val / GIGA);
-		else if (val >= MEGA) outStr.Format("%.2f mbits", val / MEGA);
-		else if (val >= KILO) outStr.Format("%.2f kbits", val / KILO);
-		else                  outStr.Format("%d bits", (int)val);
+		if      (val >= GIGA) outStr.Format("%.3f gb", val / GIGA);
+		else if (val >= MEGA) outStr.Format("%.2f mb", val / MEGA);
+		else if (val >= KILO) outStr.Format("%.2f kb", val / KILO);
+		else                  outStr.Format("%d b", (int)val);
 	}
 	
 	if (perSecond)
@@ -166,9 +166,9 @@ void FormatBytes(double val, CString &outStr, BOOL perSecond) {
 
 
 void QualifyPathName(CString *pFile, LPCSTR pIni) {
-	// Qualify the INI file to the same location as our EXE
+	// Qualify the INI file to the Roaming Application Data folder for the current user
 	char szName[MAX_PATH];
-	GetModuleFileName(AfxGetInstanceHandle(), szName, sizeof(szName));
+	ExpandEnvironmentStrings("%APPDATA%\\NetPerSec\\", szName, sizeof(szName));
 	LPSTR p = strrchr(szName, '\\');
 	if (p != NULL)
 		p[1] = '\0';
@@ -194,6 +194,7 @@ int GetPrivateProfileString(LPCSTR pKey, LPCSTR lpDefault, LPSTR lpReturn, int n
 void WritePrivateProfileInt(LPCSTR pSection, int nValue) {
 	char buf[256];
 	wsprintf(buf, "%u", nValue);
+	EnsureAppDataDirectoryExists();
 	WritePrivateProfileString(pSection, buf);
 }
 
@@ -201,6 +202,7 @@ void WritePrivateProfileInt(LPCSTR pSection, int nValue) {
 void WritePrivateProfileString(LPCSTR pSection, LPCSTR pValue) {
 	CString sFileName;
 	QualifyPathName(&sFileName, SZ_NETPERSEC_INI);
+	EnsureAppDataDirectoryExists();
 	WritePrivateProfileString(SZ_CONFIG, pSection, pValue, sFileName);
 }
 
@@ -261,4 +263,26 @@ void SaveSettings() {
 	WritePrivateProfileInt(SZ_MONITOR_MODE  , g_MonitorMode);
 	WritePrivateProfileInt(SZ_ADAPTER_INDEX , g_dwAdapter);
 	SetStartupOptions();
+}
+
+
+void EnsureAppDataDirectoryExists() {
+	CString sFileName;
+	QualifyPathName(&sFileName, "");
+	int creationResult = CreateDirectory(sFileName, NULL);
+	if (creationResult == ERROR) {
+		int error = GetLastError();
+		switch (error)
+		{
+		case ERROR_ALREADY_EXISTS:
+			//directory already exists, we can return normally
+			break;
+		case ERROR_PATH_NOT_FOUND:
+			//appdata doesn't exist
+			ShowError(IDS_APPDATA_ERR, MB_ICONERROR);
+			break;
+		default:
+			break;
+		}
+	}
 }

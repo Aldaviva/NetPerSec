@@ -104,8 +104,8 @@ BEGIN
     CONTROL         "Average",IDC_AVE_RECV_OPTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,186,43,10
     CONTROL         "Bar graph",IDC_BARGRAPH,"Button",BS_AUTORADIOBUTTON,65,172,47,10
     CONTROL         "Line graph",IDC_LINEGRAPH,"Button",BS_AUTORADIOBUTTON,65,186,49,10
-    CONTROL         "Bits per second (bit/s)",IDC_BPS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,124,172,99,10
-    CONTROL         "Bytes per second (Bytes/s)",IDC_BYTES,"Button",BS_AUTORADIOBUTTON,124,186,99,10
+    CONTROL         "Bits per second (b/s)",IDC_BPS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,124,172,99,10
+    CONTROL         "Bytes per second (B/s)",IDC_BYTES,"Button",BS_AUTORADIOBUTTON,124,186,99,10
     CONTROL         "Auto scale",IDC_AUTOSCALE_RECV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,69,49,10
     CONTROL         "Slider1",IDC_SCALE_SLIDER_RECV,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,135,67,72,12
     CONTROL         "Auto scale",IDC_AUTOSCALE_SENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,147,49,10
@@ -350,6 +350,11 @@ BEGIN
     IDS_SNMPFAIL_ERR        "SnmpExtensionInit returned an error."
     IDS_SNMPAPI_ERR         "The SNMPAPI.DLL file was not found."
     IDS_INETMIB1_ERR        "Error loading inetmib1.dll. "
+END
+
+STRINGTABLE
+BEGIN
+    IDS_APPDATA_ERR         "Could not find AppData directory."
 END
 
 #endif    // English (United States) resources

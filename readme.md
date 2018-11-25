@@ -1,17 +1,41 @@
-# NetPerSec, Version 1.1
+
+# NetPerSec, Version 1.2
 Copyright (c) 2001 Ziff Davis Media, Inc.  
 Written by Mark Sweeney  
 First Published in PC Magazine, US Edition, January 16, 2001, v20n02  
 [http://www.pcmag.com/utilities/](http://www.pcmag.com/utilities/)
 
+## DOWNLOAD:
+Download NetPerSec binaries from [Releases](releases).
+
 ## PLATFORMS:
-Windows 95, Windows 98, Windows ME, Windows NT 4, Windows 2000
+Windows 95, Windows 98, Windows ME, Windows NT 4, Windows 2000, Windows XP, Windows Vista, Windows 7, Windows 8, Windows 10
 
 ## DESCRIPTION:
 NetPerSec measures the real-time speed of your Internet connection. Different types of connections promise different communication speeds, but is this what you're actually getting? Due to network traffic, actual speeds are often slower than what is promised. Cable modems are fast if not many of your neighbors are sharing the line, but can slow down considerably with a heavy load. How do you know when it's time to switch to DSL? NetPerSec lets you check your connection speed in real time. It monitors all TCP/IP activity to and from the Internet or other networks, and graphs the communication speed. Its dynamic tray icon shows send and receive activity with a bar graph or a histogram. For details, open the program's main window to view current and average send and receive speeds in a configurable, graphical display. You can adjust the sampling rate and the amount of data used to compute the average.
 
+## BUILDING:
+
+### Prerequisites
+- [Visual Studio](https://visualstudio.microsoft.com/vs/)
+-- Works with [2017 Community Edition](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15)
+-- Requires "Desktop Development with C++" workload to be installed during VS setup
+-- Currently targets Windows 10 SDK 10.0.17763.0 (although it's easy to automatically retarget if prompted)
+
+### Compile and Run
+1. `git clone https://github.com/Aldaviva/NetPerSec.git`
+1. Open the solution `NetPerSec\NetPerSec.sln` in Visual Studio.
+1. Run NetPerSec using **Debug > Start Without Debugging**.
+1. Debug NetPerSec using **Debug > Start With Debugging**.
+
 ## REVISION HISTORY:
-Changes in Version 1.1:
+
+### Changes in Version 1.2:
+- Fixed UI annoyances.
+- Settings are stored in user's roaming application data directory instead of installation directory, to unbreak security and multi-user scenarios.
+- Committed solution.
+
+### Changes in Version 1.1:
 
 - The Graph tab now displays the "Max" value for received and transmitted data samples. This value is the fastest sample currently displayed in the graphing window.
 

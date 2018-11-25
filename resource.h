@@ -1,6 +1,7 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by NetPerSec.rc
+//
 #define IDM_ABOUTBOX                    0x0010
 #define IDD_ABOUTBOX                    100
 #define IDS_ABOUTBOX                    101
@@ -133,10 +134,12 @@
 #define IDC_USE_DUN                     1099
 #define IDC_INTERFACES                  1100
 #define IDC_MONITOR_ADAPTER             1101
+#define IDS_APPDATA_ERR                 1102
 #define ID_PROPERTIES                   32774
 #define IDM_ABOUT                       32775
 
 // Next default values for new objects
+// 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        188
