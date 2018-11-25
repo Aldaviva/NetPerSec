@@ -127,4 +127,15 @@
       <Filter>Resource Files</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\netpersec.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bargraph.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\histogram.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
