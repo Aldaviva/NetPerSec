@@ -6,7 +6,7 @@ First Published in PC Magazine, US Edition, January 16, 2001, v20n02
 [http://www.pcmag.com/utilities/](http://www.pcmag.com/utilities/)
 
 ## DOWNLOAD:
-Download NetPerSec binaries from [Releases](releases).
+Download NetPerSec binaries from [Releases](https://github.com/Aldaviva/NetPerSec/releases).
 
 ## PLATFORMS:
 Windows 95, Windows 98, Windows ME, Windows NT 4, Windows 2000, Windows XP, Windows Vista, Windows 7, Windows 8, Windows 10
