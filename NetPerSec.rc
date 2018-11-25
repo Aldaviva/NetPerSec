@@ -88,7 +88,7 @@ BEGIN
     LTEXT           "FileVersion",IDC_VERSION,139,74,44,8
     CTEXT           "LegalCopyright",IDC_COPYRIGHT,36,96,212,11
     RTEXT           "Version:",IDC_STATIC,99,74,36,8
-    CTEXT           "First published in PC Magazine, US Edition, 2001-01-16\nWritten by Mark Sweeney\n\nUpdated by Ben\nhttps://github.com/Aldaviva/NetPerSec",IDC_STATIC,27,136,230,44
+    CTEXT           "First published in PC Magazine, US Edition, 2001-01-16\nWritten by Mark Sweeney\n\nUpdated by Project Nayuki and Ben\nhttps://github.com/Aldaviva/NetPerSec",IDC_STATIC,27,136,230,44
     LTEXT           "NetPerSec",IDC_STATIC,126,26,36,8
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,71,119,146,1
     ICON            IDI_MAINFRAME,IDC_STATIC,131,43,20,20
