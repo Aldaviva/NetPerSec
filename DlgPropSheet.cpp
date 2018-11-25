@@ -84,7 +84,6 @@ BOOL DlgPropSheet::OnInitDialog() {
 	
 	HICON m_hIcon = AfxGetApp()->LoadIcon(IDI_MAINFRAME);
 	SetIcon(m_hIcon, TRUE );  // Set big icon
-	SetIcon(m_hIcon, FALSE);  // Set small icon
 	
 	// Position the dialog
 	CRect rc;
