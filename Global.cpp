@@ -143,10 +143,10 @@ void FormatBytes(double val, CString &outStr, BOOL perSecond) {
 		UINT GIGA = 1 << 30;
 		UINT MEGA = 1 << 20;
 		UINT KILO = 1 << 10;
-		if      (val >= GIGA) outStr.Format("%.3f GiB", val / GIGA);
-		else if (val >= MEGA) outStr.Format("%.2f MiB", val / MEGA);
-		else if (val >= KILO) outStr.Format("%.2f KiB", val / KILO);
-		else                  outStr.Format("%d bytes", (int)val);
+		if      (val >= GIGA) outStr.Format("%.3f GBytes", val / GIGA);
+		else if (val >= MEGA) outStr.Format("%.2f MBytes", val / MEGA);
+		else if (val >= KILO) outStr.Format("%.2f KBytes", val / KILO);
+		else                  outStr.Format("%d Bytes", (int)val);
 		
 	} else {  // Bits
 		// Decimal prefixes
@@ -154,10 +154,10 @@ void FormatBytes(double val, CString &outStr, BOOL perSecond) {
 		UINT MEGA =    1000000;
 		UINT KILO =       1000;
 		val *= 8;
-		if      (val >= GIGA) outStr.Format("%.3f Gbit", val / GIGA);
-		else if (val >= MEGA) outStr.Format("%.2f Mbit", val / MEGA);
-		else if (val >= KILO) outStr.Format("%.2f Kbit", val / KILO);
-		else                  outStr.Format("%d bit", (int)val);
+		if      (val >= GIGA) outStr.Format("%.3f gbits", val / GIGA);
+		else if (val >= MEGA) outStr.Format("%.2f mbits", val / MEGA);
+		else if (val >= KILO) outStr.Format("%.2f kbits", val / KILO);
+		else                  outStr.Format("%d bits", (int)val);
 	}
 	
 	if (perSecond)
