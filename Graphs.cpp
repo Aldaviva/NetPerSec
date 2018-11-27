@@ -37,7 +37,7 @@ END_MESSAGE_MAP()
 
 BOOL CGraphs::Create(DWORD dwStyle, const RECT &rc, CWnd *pParentWnd, UINT nID, CCreateContext* /* pContext */) {
 	static CString sClass = AfxRegisterWndClass(CS_HREDRAW | CS_VREDRAW);
-	return CWnd::CreateEx(WS_EX_CLIENTEDGE | WS_EX_STATICEDGE,
+	return CWnd::CreateEx(WS_EX_STATICEDGE,
 			sClass, NULL, dwStyle,
 			rc.left, rc.top, rc.right - rc.left, rc.bottom - rc.top,
 			pParentWnd->GetSafeHwnd(),

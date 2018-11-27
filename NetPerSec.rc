@@ -102,37 +102,37 @@ BEGIN
     PUSHBUTTON      "Reset data",IDC_RESET_DATA,228,174,43,18
     CONTROL         "Current",IDC_CURRENT_RECV_OPTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,172,39,10
     CONTROL         "Average",IDC_AVE_RECV_OPTION,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,14,186,43,10
-    CONTROL         "Bar graph",IDC_BARGRAPH,"Button",BS_AUTORADIOBUTTON,65,172,47,10
-    CONTROL         "Line graph",IDC_LINEGRAPH,"Button",BS_AUTORADIOBUTTON,65,186,49,10
-    CONTROL         "Bits per second (b/s)",IDC_BPS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,124,172,99,10
-    CONTROL         "Bytes per second (B/s)",IDC_BYTES,"Button",BS_AUTORADIOBUTTON,124,186,99,10
+    CONTROL         "Bar graph",IDC_BARGRAPH,"Button",BS_AUTORADIOBUTTON,69,172,49,10
+    CONTROL         "Line graph",IDC_LINEGRAPH,"Button",BS_AUTORADIOBUTTON,69,186,49,10
+    CONTROL         "Bits per second (b/s)",IDC_BPS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,130,172,93,10
+    CONTROL         "Bytes per second (B/s)",IDC_BYTES,"Button",BS_AUTORADIOBUTTON,130,186,93,10
     CONTROL         "Auto scale",IDC_AUTOSCALE_RECV,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,69,49,10
-    CONTROL         "Slider1",IDC_SCALE_SLIDER_RECV,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,135,67,72,12
+    CONTROL         "Slider1",IDC_SCALE_SLIDER_RECV,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,135,67,88,12
     CONTROL         "Auto scale",IDC_AUTOSCALE_SENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,83,147,49,10
-    CONTROL         "Slider1",IDC_SCALE_SLIDER_SENT,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,135,145,72,12
+    CONTROL         "Slider1",IDC_SCALE_SLIDER_SENT,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,135,146,88,12
     GROUPBOX        "Display",IDC_STATIC,6,161,270,40
-    RTEXT           "Static",IDC_RECV_CURRENT,14,22,66,12,0,WS_EX_CLIENTEDGE
-    RTEXT           "Static",IDC_RECV_AVERAGE,14,44,66,12,0,WS_EX_CLIENTEDGE
-    RTEXT           "Static",IDC_RECV_MAXIMUM,14,66,66,12,0,WS_EX_CLIENTEDGE
-    RTEXT           "Static",IDC_SENT_CURRENT,14,100,66,12,0,WS_EX_CLIENTEDGE
-    RTEXT           "Static",IDC_SENT_AVERAGE,14,122,66,12,0,WS_EX_CLIENTEDGE
+    RTEXT           "Static",IDC_RECV_CURRENT,14,22,66,12,0,WS_EX_STATICEDGE
+    RTEXT           "Static",IDC_RECV_AVERAGE,14,44,66,12,0,WS_EX_STATICEDGE
+    RTEXT           "Static",IDC_RECV_MAXIMUM,14,66,66,12,0,WS_EX_STATICEDGE
+    RTEXT           "Static",IDC_SENT_CURRENT,14,100,66,12,0,WS_EX_STATICEDGE
+    RTEXT           "Static",IDC_SENT_AVERAGE,14,122,66,12,0,WS_EX_STATICEDGE
     GROUPBOX        "Received",IDC_GROUP_RECV,6,5,270,76,0,0,HIDC_GROUP_RECV
     GROUPBOX        "Sent",IDC_GROUP_SENT,6,83,270,76
-    GROUPBOX        "",IDC_RECV_GRAPH,83,22,132,46
-    GROUPBOX        "",IDC_SENT_GRAPH,83,100,132,46
-    LTEXT           "Static",IDC_SCALE_MAX_RECV,217,18,53,8
-    LTEXT           "Static",IDC_SCALE_MID_RECV,217,40,53,8
-    LTEXT           "0",IDC_RECV_ZERO,217,62,53,8
-    LTEXT           "Static",IDC_SCALE_MAX_SENT,217,96,53,8
-    LTEXT           "Static",IDC_SCALE_MID_SENT,217,118,53,8
-    LTEXT           "0",IDC_SENT_ZERO,217,140,53,8
+    GROUPBOX        "",IDC_SENT_GRAPH,83,100,140,46
+    LTEXT           "Static",IDC_SCALE_MAX_RECV,226,22,49,8
+    LTEXT           "Static",IDC_SCALE_MID_RECV,226,41,49,8
+    LTEXT           "0",IDC_RECV_ZERO,226,61,49,8
+    LTEXT           "Static",IDC_SCALE_MAX_SENT,226,100,49,8
+    LTEXT           "Static",IDC_SCALE_MID_SENT,226,119,49,8
+    LTEXT           "0",IDC_SENT_ZERO,226,139,49,8
     LTEXT           "Current",IDC_STATIC,14,14,61,8
     LTEXT           "Average",IDC_STATIC,14,36,28,8
     LTEXT           "Current",IDC_STATIC,14,92,66,8
     LTEXT           "Average",IDC_STATIC,14,114,28,8
     LTEXT           "Max",IDC_STATIC,14,58,14,8
-    RTEXT           "Static",IDC_SENT_MAXIMUM,14,144,66,12,0,WS_EX_CLIENTEDGE
+    RTEXT           "Static",IDC_SENT_MAXIMUM,14,144,66,12,0,WS_EX_STATICEDGE
     LTEXT           "Max",IDC_STATIC,14,136,14,8
+    GROUPBOX        "",IDC_RECV_GRAPH,83,22,140,46,BS_FLAT
 END
 
 IDD_OPTIONS_DLG DIALOGEX 0, 0, 284, 204
@@ -142,19 +142,19 @@ FONT 8, "MS Sans Serif", 0, 0, 0x0
 BEGIN
     CONTROL         "Slider1",IDC_SAMPLE_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,29,37,227,16
     CONTROL         "Slider1",IDC_AVERAGE_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | WS_TABSTOP,29,107,227,16
-    CONTROL         "Monitor all network activity (default).",IDC_USE_SNMP,
-                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,23,155,243,10
-    CONTROL         "Monitor dial-up networking only.",IDC_USE_DUN,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,23,168,243,10
-    CONTROL         "Monitor adapter.",IDC_MONITOR_ADAPTER,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,23,181,67,10
-    COMBOBOX        IDC_INTERFACES,92,180,176,51,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Monitor all network activity (default)",IDC_USE_SNMP,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,155,243,10
+    CONTROL         "Monitor dial-up networking only",IDC_USE_DUN,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,168,243,10
+    CONTROL         "Monitor adapter:",IDC_MONITOR_ADAPTER,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,17,181,67,10
+    COMBOBOX        IDC_INTERFACES,84,180,184,51,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
     GROUPBOX        "Sampling Rate",IDC_SAMPLE_GROUP,6,5,266,62
-    CTEXT           ".25",IDC_STATIC,27,56,11,8
-    CTEXT           "5",IDC_STATIC,246,56,8,8
-    LTEXT           "This setting controls how often the network statistics are updated.  Lower values (left) will yield more accurate results.",IDC_STATIC,45,18,204,19
+    CTEXT           ".25",IDC_STATIC,32,56,11,8
+    CTEXT           "5",IDC_STATIC,243,56,8,8
+    LTEXT           "This setting controls how often the network statistics are updated.  Lower values (left) will yield more accurate results.",IDC_STATIC,38,18,211,19
     GROUPBOX        "Averaging Window",IDC_AVERAGE_GROUP,6,69,266,69
-    CTEXT           "60",IDC_AVERAGE_MAX,242,124,17,8
-    CTEXT           "5",IDC_AVERAGE_MIN,25,124,19,8
-    LTEXT           "Averages are calculated over a period of time.   This setting specifies the number of seconds of network activity to include in the average.",IDC_STATIC,41,81,204,24
+    CTEXT           "60",IDC_AVERAGE_MAX,239,127,17,8
+    CTEXT           "5",IDC_AVERAGE_MIN,29,126,19,8
+    LTEXT           "Averages are calculated over a period of time. This setting specifies the number of seconds of network activity to include in the average.",IDC_STATIC,41,81,210,24
     GROUPBOX        "Network Interface",IDC_STATIC,6,142,266,56
 END
 
@@ -270,6 +270,10 @@ BEGIN
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 277
+        VERTGUIDE, 83
+        VERTGUIDE, 223
+        VERTGUIDE, 226
+        VERTGUIDE, 275
         TOPMARGIN, 7
         BOTTOMMARGIN, 197
     END
