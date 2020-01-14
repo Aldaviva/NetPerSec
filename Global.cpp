@@ -154,8 +154,8 @@ void FormatBytes(double val, CString &outStr, BOOL perSecond) {
 		UINT MEGA =    1000000;
 		UINT KILO =       1000;
 		val *= 8;
-		if      (val >= GIGA) outStr.Format("%.3f gb", val / GIGA);
-		else if (val >= MEGA) outStr.Format("%.2f mb", val / MEGA);
+		if      (val >= GIGA) outStr.Format("%.3f Gb", val / GIGA);
+		else if (val >= MEGA) outStr.Format("%.2f Mb", val / MEGA);
 		else if (val >= KILO) outStr.Format("%.2f kb", val / KILO);
 		else                  outStr.Format("%d b", (int)val);
 	}
